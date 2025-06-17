@@ -11,12 +11,26 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Set style for better-looking plots
-plt.style.use('seaborn-v0_8')
+try:
+    plt.style.use('seaborn-v0_8')
+except OSError:
+    # Fallback to a basic style if seaborn style is not available
+    plt.style.use('ggplot')
+    
 sns.set_palette("husl")
 
 
 def setup_plot_style():
     """Setup consistent plotting style."""
+    # Try to use seaborn style, fall back to ggplot if not available
+    try:
+        plt.style.use('seaborn-v0_8-whitegrid')
+    except OSError:
+        try:
+            plt.style.use('ggplot')
+        except OSError:
+            plt.style.use('default')
+    
     plt.rcParams['figure.figsize'] = (12, 8)
     plt.rcParams['font.size'] = 12
     plt.rcParams['axes.titlesize'] = 14
