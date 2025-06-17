@@ -1,0 +1,39 @@
+{
+  "project": {
+    "name": "semantic-book-recommender",
+    "version": "0.1.0",
+    "description": "A machine learning project for semantic book recommendations"
+  },
+  "data": {
+    "source_file": "books.csv",
+    "processed_data_dir": "data/processed",
+    "raw_data_dir": "data/raw",
+    "test_size": 0.2,
+    "random_state": 42
+  },
+  "analysis": {
+    "sample_size_for_plots": 1000,
+    "min_ratings_threshold": 10,
+    "min_pages_threshold": 10,
+    "max_pages_threshold": 2000,
+    "publication_year_min": 1800,
+    "publication_year_max": 2024
+  },
+  "visualization": {
+    "figure_size": [12, 8],
+    "style": "seaborn-v0_8",
+    "color_palette": "husl",
+    "save_plots": true,
+    "plots_dir": "outputs/plots"
+  },
+  "model": {
+    "embedding_dim": 100,
+    "max_features": 10000,
+    "sequence_length": 200
+  },
+  "paths": {
+    "notebooks": "notebooks",
+    "outputs": "outputs",
+    "models": "models"
+  }
+} 
